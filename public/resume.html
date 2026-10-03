@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bipin S Menon - Resume</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    background: #0e0704;
+    color: #111111;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  /* Top floating action bar */
+  .top-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    background: rgba(26, 12, 6, 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 90, 20, 0.25);
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+  .brand {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    color: #fff3ea;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+  .brand span {
+    color: #ff5a14;
+  }
+  .actions {
+    display: flex;
+    gap: 10px;
+  }
+  .bar-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 16px;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    font-family: 'Outfit', sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: 0.2s;
+  }
+  .btn-back {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff3ea;
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+  .btn-back:hover {
+    background: rgba(255, 255, 255, 0.16);
+    border-color: #ff5a14;
+  }
+  .btn-download {
+    background: linear-gradient(135deg, #ff8a3d, #ff5a14);
+    color: #1a0802;
+    box-shadow: 0 0 16px rgba(255, 90, 20, 0.4);
+  }
+  .btn-download:hover {
+    box-shadow: 0 0 24px rgba(255, 90, 20, 0.7);
+  }
+
+  /* Document sheet wrapper */
+  .sheet-wrapper {
+    padding: 30px 15px 60px 15px;
+    display: flex;
+    justify-content: center;
+  }
+  .resume-paper {
+    background: #ffffff;
+    width: 100%;
+    max-width: 820px;
+    min-height: 1100px;
+    padding: 44px 50px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+    border-radius: 4px;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .name {
+    font-size: 21pt;
+    font-weight: 800;
+    color: #1a4480;
+    letter-spacing: 0.5px;
+    margin: 0 0 4px 0;
+  }
+  .contact-info {
+    font-size: 9.5pt;
+    color: #222222;
+    margin: 2px 0;
+  }
+  .contact-info a {
+    color: #1a4480;
+    text-decoration: underline;
+  }
+  .section-title {
+    font-size: 10.5pt;
+    font-weight: 800;
+    color: #1a4480;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+    margin-bottom: 3px;
+    border-bottom: 1.5px solid #1a4480;
+    padding-bottom: 2px;
+  }
+  .summary {
+    text-align: justify;
+    font-size: 9pt;
+    margin-top: 4px;
+    margin-bottom: 6px;
+    line-height: 1.35;
+  }
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 9.5pt;
+    color: #111111;
+    margin-top: 5px;
+  }
+  .item-sub {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9pt;
+    color: #222222;
+    margin-bottom: 4px;
+  }
+  .skills-list {
+    font-size: 9pt;
+    line-height: 1.38;
+    margin-top: 4px;
+    margin-bottom: 6px;
+  }
+  .skills-list strong {
+    color: #1a4480;
+    font-weight: 700;
+  }
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 6px;
+    margin-bottom: 2px;
+  }
+  .project-title {
+    font-weight: 700;
+    font-size: 9.5pt;
+    color: #111111;
+  }
+  .project-tech {
+    font-style: italic;
+    font-size: 8.5pt;
+    color: #333333;
+    text-align: right;
+  }
+  ul {
+    margin: 2px 0 6px 0;
+    padding-left: 18px;
+  }
+  li {
+    font-size: 8.8pt;
+    margin-bottom: 2px;
+    line-height: 1.32;
+    text-align: justify;
+  }
+
+  @media print {
+    body {
+      background: #ffffff;
+      padding: 0;
+    }
+    .top-bar {
+      display: none !important;
+    }
+    .sheet-wrapper {
+      padding: 0;
+    }
+    .resume-paper {
+      box-shadow: none;
+      border-radius: 0;
+      padding: 0;
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 600px) {
+    .resume-paper {
+      padding: 24px 18px;
+    }
+    .item-header, .item-sub, .project-header {
+      flex-direction: column;
+    }
+    .project-tech {
+      text-align: left;
+      margin-top: 2px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="/" class="brand">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff5a14" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    <span>BIPIN S MENON</span> · Portfolio
+  </a>
+  <div class="actions">
+    <a href="/" class="bar-btn btn-back">Portfolio</a>
+    <a href="/Bipin_S_Menon_Resume.pdf" download="Bipin_S_Menon_Resume.pdf" class="bar-btn btn-download">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></svg>
+      Download PDF
+    </a>
+  </div>
+</div>
+
+<div class="sheet-wrapper">
+  <div class="resume-paper">
+    <div class="header">
+      <div class="name">BIPIN S MENON</div>
+      <div class="contact-info">
+        9566650960 &nbsp;|&nbsp; <a href="mailto:bipinsmenon@gmail.com">bipinsmenon@gmail.com</a>
+      </div>
+      <div class="contact-info">
+        <a href="https://www.linkedin.com/in/bipinsmenon" target="_blank">linkedin.com/in/bipinsmenon</a> &nbsp;|&nbsp; Portfolio: <a href="https://portfolio-nu-mocha-33.vercel.app/" target="_blank">portfolio-nu-mocha-33.vercel.app</a>
+      </div>
+    </div>
+
+    <div class="section-title">PROFESSIONAL SUMMARY</div>
+    <div class="summary">
+      Aspiring Software Developer with hands-on experience in front-end development, Java, Python, and software testing. Skilled in building responsive web applications and developing innovative projects involving OCR, Blockchain, and automation. Strong problem-solving abilities, a passion for learning new technologies, and a commitment to delivering efficient, user-focused software solutions in a dynamic development environment.
+    </div>
+
+    <div class="section-title">EDUCATION</div>
+    <div class="item-header">
+      <span>Sri Ramakrishna Engineering College</span>
+      <span>Coimbatore | 2023 – 2027</span>
+    </div>
+    <div class="item-sub">
+      <span>B.E. Computer Science and Engineering | CGPA: 7.3</span>
+      <span></span>
+    </div>
+
+    <div class="item-header" style="margin-top: 4px;">
+      <span>Coimbatore Public School (CBSE)</span>
+      <span>Coimbatore | 2022 – 2023</span>
+    </div>
+    <div class="item-sub">
+      <span>Higher Secondary Certificate (HSC) | Percentage: 61.6%</span>
+      <span></span>
+    </div>
+
+    <div class="section-title">TECHNICAL SKILLS</div>
+    <div class="skills-list">
+      <div><strong>Programming Languages:</strong> Java, Python, C</div>
+      <div><strong>Frontend:</strong> HTML5, CSS3, JavaScript, React.js, Responsive Web Design, UI/UX</div>
+      <div><strong>Backend:</strong> Spring Boot, Flask</div>
+      <div><strong>Databases:</strong> MySQL</div>
+      <div><strong>AI &amp; Machine Learning:</strong> OCR, RoBERTa, NLP</div>
+      <div><strong>Software Testing:</strong> Manual Testing, Automation Testing</div>
+      <div><strong>Tools &amp; Platforms:</strong> GitHub, VS Code, Android Studio, Postman</div>
+      <div><strong>Core Concepts:</strong> Object-Oriented Programming (OOP), DBMS, Operating Systems, Computer Networks, REST APIs</div>
+    </div>
+
+    <div class="section-title">PROJECTS</div>
+
+    <div class="project-header">
+      <span class="project-title">OCR Accuracy Enhancement Using RoBERTa-based AI Model</span>
+      <span class="project-tech">Python, RoBERTa, NLP, OCR</span>
+    </div>
+    <ul>
+      <li>Developed an AI-powered post-processing system that improves OCR text accuracy using the RoBERTa language model.</li>
+      <li>Corrected character- and word-level recognition errors by leveraging contextual language understanding.</li>
+      <li>Enhanced the quality of scanned documents, books, and forms through intelligent text correction.</li>
+    </ul>
+
+    <div class="project-header">
+      <span class="project-title">CiviSnap – AI-Powered Civic Issue Reporting System</span>
+      <span class="project-tech">App Development, AI</span>
+    </div>
+    <ul>
+      <li>Developed an AI-powered platform that lets citizens report civic issues such as potholes, garbage, and damaged streetlights through image uploads.</li>
+      <li>Integrated AI-based image analysis to identify and classify issues and generate descriptions before forwarding complaints to the appropriate government department.</li>
+      <li>Implemented real-time complaint tracking, secure user authentication, and an admin dashboard for monitoring and resolving reported issues.</li>
+    </ul>
+
+    <div class="project-header">
+      <span class="project-title">LifeLine – Emergency First Response System</span>
+      <span class="project-tech">React.js, Python, Flask</span>
+    </div>
+    <ul>
+      <li>Developing a mobile application that connects nearby physicians with heart attack patients during medical emergencies.</li>
+      <li>Implementing a one-tap SOS feature with live location sharing for faster emergency response.</li>
+      <li>Aiming to reduce response time by enabling immediate first aid before an ambulance arrives.</li>
+    </ul>
+
+    <div class="section-title">ACHIEVEMENTS</div>
+    <ul>
+      <li>Winner – Tech Accelerate Hackathon, BITS Pilani, Hyderabad, for developing a Candidate Voting System using Blockchain, recognized for its secure and transparent digital voting solution.</li>
+      <li>Completed dual-domain internships in UI/UX and Front-End Web Development, gaining cross-functional industry exposure.</li>
+    </ul>
+
+    <div class="section-title">CERTIFICATIONS</div>
+    <ul>
+      <li>AWS Certified Solutions Architect – Associate – Udemy</li>
+      <li>Infosys Certified Scrum Master – Infosys Springboard</li>
+      <li>Software Engineer – Infosys Springboard</li>
+      <li>Agile Software Development – Infosys Springboard</li>
+      <li>Programming in C – Skillrack</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
